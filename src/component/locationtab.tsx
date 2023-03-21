@@ -47,7 +47,7 @@ export const LocationTab = () => {
             data={ctrl.locations}
             keyboardDismissMode={'on-drag'}
             showsVerticalScrollIndicator={false}
-            renderItem={(location: any) => {
+            renderItem={location => {
               return (
                 <Layout key={location.item.id} style={style.listContainer}>
                   <Card style={style.firstCard} disabled={true}>

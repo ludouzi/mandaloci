@@ -3,6 +3,7 @@ import React from 'react';
 import {SafeAreaView} from 'react-native';
 import {LessonController} from '../controller/lessoncontroller';
 import {style} from '../style/style';
+import {Card} from '../types';
 
 export const PageScreen = (props: any) => {
   const ctrl = LessonController();
@@ -14,7 +15,7 @@ export const PageScreen = (props: any) => {
         swipeEnabled={false}
         selectedIndex={ctrl.selectedPage}
         onSelect={index => ctrl.setPage(index)}>
-        {props.route.params.pages.map((page: any, index: number) => {
+        {props.route.params.pages.map((page: Card, index: number) => {
           return (
             <Layout style={style.tab} key={index} level="2">
               <Layout style={style.tab}>{ctrl.getScreen(page, ctrl)}</Layout>

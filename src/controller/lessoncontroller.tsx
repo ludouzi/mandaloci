@@ -18,8 +18,9 @@ import {
   setPropLearned,
 } from '../database/database';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {StackParamList} from '../app';
 import {Character} from '../entity/character';
+import {Card, CardList, StackParamList} from '../types';
+import {Prop} from '../entity/prop';
 
 type lessonScreenProp = NativeStackNavigationProp<StackParamList>;
 
@@ -36,7 +37,7 @@ export const LessonController = () => {
   };
 
   const getPages = (char: Character) => {
-    let result: any = [];
+    let result: CardList = [];
     // gets all components of a character
     // only adds if not already learned
     if (!char.actor.isLearned) {
@@ -45,7 +46,7 @@ export const LessonController = () => {
     if (!char.location.isLearned) {
       result.push(char.location);
     }
-    char.props.forEach((prop: {isLearned: boolean}) => {
+    char.props.forEach((prop: Prop) => {
       if (!prop.isLearned) {
         result.push(prop);
       }
@@ -79,7 +80,9 @@ export const LessonController = () => {
   }
 
   function checkInput(page: {
-    examples: {split: (arg0: string) => {(): any; new (): any; length: number}};
+    examples: {
+      split: (arg0: string) => {(): string; new (): string; length: number};
+    };
   }) {
     if (currentText === '') {
       if (page.examples) {
@@ -102,7 +105,7 @@ export const LessonController = () => {
     setSelectedPage(index);
   }
 
-  const nextPage = async (page: any) => {
+  const nextPage = async (page: Card) => {
     Keyboard.dismiss();
     await savePage(page);
     setSelectedRadio(0);
@@ -110,7 +113,7 @@ export const LessonController = () => {
     setSelectedPage(selectedPage + 1);
   };
 
-  const finishLesson = async (page: any) => {
+  const finishLesson = async (page: Card) => {
     await savePage(page);
     navigation.navigate('Home');
   };

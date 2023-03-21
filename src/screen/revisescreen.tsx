@@ -2,6 +2,7 @@ import {Layout, ViewPager, Button} from '@ui-kitten/components';
 import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 import {CardController} from '../controller/cardcontroller';
+import {Card} from '../types';
 
 export const ReviseScreen = (props: any) => {
   const ctrl = CardController();
@@ -13,7 +14,7 @@ export const ReviseScreen = (props: any) => {
         swipeEnabled={true}
         selectedIndex={ctrl.selectedCard}
         onSelect={index => ctrl.setSelectedCard(index)}>
-        {props.route.params.cards.map((card: any, index: number) => {
+        {props.route.params.cards.map((card: Card, index: number) => {
           return (
             <Layout style={styles.tab} key={index} level="2">
               <Layout style={styles.tab}>{ctrl.getCard(card)}</Layout>

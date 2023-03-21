@@ -1,6 +1,7 @@
 import {useState, useCallback} from 'react';
 import {useFocusEffect} from '@react-navigation/native';
 import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {
   getCharacterCards,
   getActorCards,
@@ -16,20 +17,19 @@ import {CharacterCard} from '../component/charactercard';
 import {ActorCard} from '../component/actorcard';
 import {LocationCard} from '../component/locationcard';
 import {PropCard} from '../component/propcard';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {StackParamList} from '../app';
+import {CardList, StackParamList} from '../types';
 
 type cardScreenProp = NativeStackNavigationProp<StackParamList>;
 
 export const CardController = () => {
   const navigation = useNavigation<cardScreenProp>();
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState<CardList>([]);
   const [total, setTotal] = useState(0);
   const [selectedCard, setSelectedCard] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
 
   const getData = async () => {
-    let result: any = [];
+    let result: CardList = [];
     // push all cards with a due date before now into single array
     result.push.apply(result, await getCharacterCards());
     result.push.apply(result, await getActorCards());

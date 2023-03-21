@@ -1,7 +1,8 @@
 import React from 'react';
 import {Text} from '@ui-kitten/components';
+import {Character} from '../entity/character';
 
-export const CharacterCard = (page: any, flipped: boolean) => {
+export const CharacterCard = (page: Character, flipped: boolean) => {
   return (
     <>
       {!flipped ? (

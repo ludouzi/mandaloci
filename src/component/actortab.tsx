@@ -47,7 +47,7 @@ export const ActorTab = () => {
             data={ctrl.actors}
             keyboardDismissMode={'on-drag'}
             showsVerticalScrollIndicator={false}
-            renderItem={(actor: any) => {
+            renderItem={actor => {
               return (
                 <Layout key={actor.item.id} style={style.listContainer}>
                   <Card style={style.firstCard} disabled={true}>

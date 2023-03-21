@@ -1,9 +1,10 @@
 import {useState, useCallback, SetStateAction} from 'react';
 import {useFocusEffect} from '@react-navigation/core';
 import {getChars, getSearchChars} from '../database/database';
+import {Character} from '../entity/character';
 
 export const CharTabController = () => {
-  const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState<Character[]>([]);
   const [isVisible, setIsVisible] = useState(false);
   const [id, setId] = useState(0);
   const [currentText, setCurrentText] = useState('');

@@ -2,8 +2,9 @@ import {Actor} from '../entity/actor';
 import {Character} from '../entity/character';
 import {Location} from '../entity/location';
 import {Prop} from '../entity/prop';
+import {Card, CardList} from '../types';
 
-export const getType = (page: any) => {
+export const getType = (page: Card) => {
   if (page instanceof Character) {
     return 'char';
   }
@@ -18,7 +19,7 @@ export const getType = (page: any) => {
   }
 };
 
-export const shuffleArray = (array: []) => {
+export const shuffleArray = (array: CardList) => {
   let a = array;
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));

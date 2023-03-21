@@ -5,9 +5,10 @@ import {
   setLocation,
   getSearchLocations,
 } from '../database/database';
+import {Location} from '../entity/location';
 
 export const LocationTabController = () => {
-  const [locations, setLocations] = useState([]);
+  const [locations, setLocations] = useState<Location[]>([]);
   const [isVisible, setIsVisible] = useState(false);
   const [id, setId] = useState(0);
   const [currentText, setCurrentText] = useState('');

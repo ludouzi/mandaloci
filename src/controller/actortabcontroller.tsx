@@ -1,9 +1,10 @@
 import {useState, useCallback, SetStateAction} from 'react';
 import {useFocusEffect} from '@react-navigation/core';
 import {getActors, setActor, getSearchActors} from '../database/database';
+import {Actor} from '../entity/actor';
 
 export const ActorTabController = () => {
-  const [actors, setActors] = useState([]);
+  const [actors, setActors] = useState<Actor[]>([]);
   const [isVisible, setIsVisible] = useState(false);
   const [id, setId] = useState(0);
   const [currentText, setCurrentText] = useState('');

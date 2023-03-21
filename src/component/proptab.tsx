@@ -47,7 +47,7 @@ export const PropTab = () => {
             data={ctrl.props}
             keyboardDismissMode={'on-drag'}
             showsVerticalScrollIndicator={false}
-            renderItem={(prop: any) => {
+            renderItem={prop => {
               return (
                 <Layout key={prop.item.id} style={style.listContainer}>
                   <Card style={style.firstCard} disabled={true}>

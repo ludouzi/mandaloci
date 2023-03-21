@@ -21,7 +21,7 @@ export const LessonsScreen = () => {
             data={ctrl.chars}
             keyboardDismissMode={'on-drag'}
             showsVerticalScrollIndicator={false}
-            renderItem={(data: any) => {
+            renderItem={data => {
               return (
                 <Layout style={style.container}>
                   <Card

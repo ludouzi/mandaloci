@@ -19,7 +19,7 @@ export const CharTab = () => {
             data={ctrl.characters}
             keyboardDismissMode={'on-drag'}
             showsVerticalScrollIndicator={false}
-            renderItem={(char: any) => {
+            renderItem={char => {
               return (
                 <Layout key={char.item.id} style={style.listContainer}>
                   <Card style={style.firstCard} disabled={true}>

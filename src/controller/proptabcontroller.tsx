@@ -1,9 +1,10 @@
 import {useState, useCallback} from 'react';
 import {useFocusEffect} from '@react-navigation/core';
 import {getProps, setProp, getSearchProps} from '../database/database';
+import {Prop} from '../entity/prop';
 
 export const PropTabController = () => {
-  const [props, setProps] = useState([]);
+  const [props, setProps] = useState<Prop[]>([]);
   const [isVisible, setIsVisible] = useState(false);
   const [id, setId] = useState(0);
   const [currentText, setCurrentText] = useState('');

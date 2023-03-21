@@ -1,7 +1,8 @@
 import React from 'react';
 import {Text} from '@ui-kitten/components';
+import {Location} from '../entity/location';
 
-export const LocationCard = (page: any, flipped: boolean) => {
+export const LocationCard = (page: Location, flipped: boolean) => {
   return (
     <>
       {!flipped ? (

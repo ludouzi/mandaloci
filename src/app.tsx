@@ -16,16 +16,7 @@ import {Actor} from './entity/actor';
 import {Character} from './entity/character';
 import {Location} from './entity/location';
 import {Prop} from './entity/prop';
-
-export type StackParamList = {
-  Home: undefined;
-  PageScreen: {id: number; pages: []};
-  ReviseScreen: {cards: Array<Character | Actor | Location | Prop>[]};
-  Tutorial: undefined;
-  TutorialScreen: {pages: []};
-  TutorialStart: undefined;
-  Cards: undefined;
-};
+import {StackParamList} from './types';
 
 const {Navigator, Screen} = createNativeStackNavigator<StackParamList>();
 

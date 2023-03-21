@@ -2,8 +2,9 @@ import React from 'react';
 import {Layout, Divider, Text} from '@ui-kitten/components';
 import {style} from '../style/style';
 import {ChoiceInput} from '../component/choiceinput';
+import {Location} from '../entity/location';
 
-export const LocationPage = (page: any, ctrl: any) => {
+export const LocationPage = (page: Location, ctrl: any) => {
   return (
     <Layout style={style.pageContainer}>
       <Layout style={style.titleView}>

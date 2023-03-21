@@ -1,8 +1,10 @@
 import React from 'react';
 import {Layout, Divider, Text, TextElement} from '@ui-kitten/components';
 import {style} from '../style/style';
+import {Character} from '../entity/character';
+import {Prop} from '../entity/prop';
 
-export const CharacterPage = (page: any) => {
+export const CharacterPage = (page: Character) => {
   return (
     <Layout style={style.pageContainer}>
       <Layout style={style.titleView}>
@@ -41,7 +43,7 @@ export const CharacterPage = (page: any) => {
       </Layout>
       <Layout>
         <Text category="h2">{'\n'}Props</Text>
-        {page.props.map((prop: any) => {
+        {page.props.map((prop: Prop) => {
           return <Text key={prop.id}>{prop.comp}</Text>;
         })}
       </Layout>

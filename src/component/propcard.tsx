@@ -1,7 +1,8 @@
 import React from 'react';
 import {Text} from '@ui-kitten/components';
+import {Prop} from '../entity/prop';
 
-export const PropCard = (page: any, flipped: boolean) => {
+export const PropCard = (page: Prop, flipped: boolean) => {
   return (
     <>
       {!flipped ? (

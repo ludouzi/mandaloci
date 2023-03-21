@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {tutorialPages} from '../util/tutorial';
-import {StackParamList} from '../app';
+import {StackParamList} from '../types';
 
 type tutorialScreenProp = NativeStackNavigationProp<StackParamList>;
 
