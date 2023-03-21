@@ -5,21 +5,25 @@
 # Mandaloci
 
 ## General info
+
 Mandaloci is a mobile app designed to teach you Chinese characters using a variant of the method of loci. It includes a tutorial, lessons, and a flashcard system to test your knowledge.
-	
+
 ## Technologies
+
 Mandaloci is created with:
-* React Native: 0.64.1
-* UI Kitten: 5.1.1
-* Typeorm: 0.2.38
+
+- React Native: 0.71.4
+- UI Kitten: 5.1.2
+- Typeorm: 0.2.45
 
 Please note Mandaloci has only been tested on Android devices.
-	
+
 ## Setup
+
 To run this project, install it locally using yarn:
 
 ```
 $ yarn install
 $ yarn start
-$ npx react-native run-android
+$ yarn android
 ```
