@@ -141,7 +141,6 @@ export const style = StyleSheet.create({
 
   buttonsContainer: {
     width: '100%',
-    marginTop: '20%',
   },
 
   lessonButton: {
