@@ -4,7 +4,7 @@ import {Location} from './entity/location';
 import {Prop} from './entity/prop';
 
 export type Card = Character | Actor | Location | Prop;
-export type CardList = Array<Character | Actor | Location | Prop>;
+export type CardList = Array<Card>;
 
 export type StackParamList = {
   Home: undefined;
