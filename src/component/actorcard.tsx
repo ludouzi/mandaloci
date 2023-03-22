@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, TextElement} from '@ui-kitten/components';
+import {Text} from '@ui-kitten/components';
 import {Actor} from '../entity/actor';
 
 export const ActorCard = (page: Actor, flipped: boolean) => {

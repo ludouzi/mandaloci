@@ -1,4 +1,4 @@
-import {useState, useCallback, SetStateAction} from 'react';
+import {useState, useCallback} from 'react';
 import {useFocusEffect} from '@react-navigation/core';
 import {getChars, getSearchChars} from '../database/database';
 import {Character} from '../entity/character';

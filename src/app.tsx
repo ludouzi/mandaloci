@@ -10,7 +10,7 @@ import {BottomNavigator} from './component/bottomnav';
 import {PageScreen} from './screen/pagescreen';
 import {ReviseScreen} from './screen/revisescreen';
 import {TutorialScreen} from './screen/tutorialscreen';
-import {createConnection, getRepository, Connection} from 'typeorm/browser';
+import {createConnection, Connection} from 'typeorm/browser';
 
 import {Actor} from './entity/actor';
 import {Character} from './entity/character';

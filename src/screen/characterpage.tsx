@@ -1,5 +1,5 @@
 import React from 'react';
-import {Layout, Divider, Text, TextElement} from '@ui-kitten/components';
+import {Layout, Divider, Text} from '@ui-kitten/components';
 import {style} from '../style/style';
 import {Character} from '../entity/character';
 import {Prop} from '../entity/prop';
