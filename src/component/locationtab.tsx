@@ -1,10 +1,10 @@
 import React from 'react';
-import {SafeAreaView} from 'react-native';
 import {Layout, List, Card, Text, Input, Button} from '@ui-kitten/components';
 import {LocationTabController} from '../controller/locationtabcontroller';
 import {SearchBar} from './searchbar';
 import {EmptyList} from './emptylist';
 import {style} from '../style/style';
+import {TabView} from './tabview';
 
 export const LocationTab = () => {
   const ctrl = LocationTabController();
@@ -38,7 +38,7 @@ export const LocationTab = () => {
   }
 
   return (
-    <SafeAreaView>
+    <TabView>
       {ctrl.locations.length >= 1 ? (
         <>
           <SearchBar queryData={ctrl.getSearchData} />
@@ -69,6 +69,6 @@ export const LocationTab = () => {
       ) : (
         <EmptyList text="locations" />
       )}
-    </SafeAreaView>
+    </TabView>
   );
 };

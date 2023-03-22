@@ -1,10 +1,10 @@
 import React from 'react';
-import {SafeAreaView} from 'react-native';
 import {Layout, List, Card, Text, Input, Button} from '@ui-kitten/components';
 import {PropTabController} from '../controller/proptabcontroller';
 import {SearchBar} from './searchbar';
 import {EmptyList} from './emptylist';
 import {style} from '../style/style';
+import {TabView} from './tabview';
 
 export const PropTab = () => {
   const ctrl = PropTabController();
@@ -38,7 +38,7 @@ export const PropTab = () => {
   }
 
   return (
-    <SafeAreaView>
+    <TabView>
       {ctrl.props.length >= 1 ? (
         <>
           <SearchBar queryData={ctrl.getSearchData} />
@@ -69,6 +69,6 @@ export const PropTab = () => {
       ) : (
         <EmptyList text="props" />
       )}
-    </SafeAreaView>
+    </TabView>
   );
 };

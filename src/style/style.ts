@@ -35,6 +35,10 @@ export const style = StyleSheet.create({
     backgroundColor: mainColour,
   },
 
+  tabView: {
+    paddingBottom: 220,
+  },
+
   cardContainer: {
     flex: 1,
     backgroundColor: mainColour,

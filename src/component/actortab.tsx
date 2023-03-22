@@ -1,10 +1,10 @@
 import React from 'react';
-import {SafeAreaView} from 'react-native';
 import {Layout, List, Card, Text, Input, Button} from '@ui-kitten/components';
 import {ActorTabController} from '../controller/actortabcontroller';
 import {SearchBar} from './searchbar';
 import {EmptyList} from './emptylist';
 import {style} from '../style/style';
+import {TabView} from './tabview';
 
 export const ActorTab = () => {
   const ctrl = ActorTabController();
@@ -38,7 +38,7 @@ export const ActorTab = () => {
   }
 
   return (
-    <SafeAreaView>
+    <TabView>
       {ctrl.actors.length >= 1 ? (
         <>
           <SearchBar queryData={ctrl.getSearchData} />
@@ -69,6 +69,6 @@ export const ActorTab = () => {
       ) : (
         <EmptyList text="actors" />
       )}
-    </SafeAreaView>
+    </TabView>
   );
 };
