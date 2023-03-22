@@ -8,6 +8,8 @@
 
 Mandaloci is a mobile app designed to teach you Chinese characters using a variant of the method of loci. It includes a tutorial, lessons, and a flashcard system to test your knowledge.
 
+See a quick demonstration of it's use [here](https://github.com/ludouzi/mandaloci/tree/master/src/assets/demonstration.mp4).
+
 ## Technologies
 
 Mandaloci is created with:
