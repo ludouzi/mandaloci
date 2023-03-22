@@ -45,6 +45,7 @@ export const ActorTab = () => {
           <List
             style={style.container}
             data={ctrl.actors}
+            extraData={ctrl.actors}
             keyboardDismissMode={'on-drag'}
             showsVerticalScrollIndicator={false}
             renderItem={actor => {

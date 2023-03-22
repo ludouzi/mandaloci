@@ -28,9 +28,17 @@ export const PropTabController = () => {
   const handleSave = async () => {
     setIsVisible(false);
     await setProp(id, currentText);
-    // refresh data on save
-    // maybe replace item in state for improved performance
-    getData();
+    const newProps = props.map(prop => {
+      if (prop.id === id) {
+        const updatedProp = {
+          ...prop,
+          value: currentText,
+        };
+        return updatedProp;
+      }
+      return prop;
+    });
+    setProps(newProps);
   };
 
   const getData = async () => {

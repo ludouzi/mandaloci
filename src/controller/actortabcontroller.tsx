@@ -28,9 +28,17 @@ export const ActorTabController = () => {
   const handleSave = async () => {
     setIsVisible(false);
     await setActor(id, currentText);
-    // refresh data on save
-    // maybe replace item in state for improved performance
-    getData();
+    const newActors = actors.map(actor => {
+      if (actor.id === id) {
+        const updatedActor = {
+          ...actor,
+          value: currentText,
+        };
+        return updatedActor;
+      }
+      return actor;
+    });
+    setActors(newActors);
   };
 
   const getData = async () => {

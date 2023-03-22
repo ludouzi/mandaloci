@@ -32,9 +32,17 @@ export const LocationTabController = () => {
   const handleSave = async () => {
     setIsVisible(false);
     await setLocation(id, currentText);
-    // refresh data on save
-    // maybe replace item in state for improved performance
-    getData();
+    const newLocations = locations.map(location => {
+      if (location.id === id) {
+        const updatedLocation = {
+          ...location,
+          value: currentText,
+        };
+        return updatedLocation;
+      }
+      return location;
+    });
+    setLocations(newLocations);
   };
 
   const getData = async () => {

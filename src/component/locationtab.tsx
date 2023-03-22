@@ -45,6 +45,7 @@ export const LocationTab = () => {
           <List
             style={style.container}
             data={ctrl.locations}
+            extraData={ctrl.locations}
             keyboardDismissMode={'on-drag'}
             showsVerticalScrollIndicator={false}
             renderItem={location => {

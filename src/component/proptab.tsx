@@ -45,6 +45,7 @@ export const PropTab = () => {
           <List
             style={style.container}
             data={ctrl.props}
+            extraData={ctrl.props}
             keyboardDismissMode={'on-drag'}
             showsVerticalScrollIndicator={false}
             renderItem={prop => {
