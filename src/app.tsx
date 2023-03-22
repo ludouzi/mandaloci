@@ -17,11 +17,13 @@ import {Character} from './entity/character';
 import {Location} from './entity/location';
 import {Prop} from './entity/prop';
 import {StackParamList} from './types';
+import {SplashScreen} from './screen/splashscreen';
 
 const {Navigator, Screen} = createNativeStackNavigator<StackParamList>();
 
 const App: () => ReactNode = () => {
   const [connection, setConnection] = useState<Connection | null>(null);
+  const [appReady, setAppReady] = useState(false);
   const [displayTutorial, setDisplayTutorial] = useState(true);
 
   const setupConnection = useCallback(async () => {
@@ -47,7 +49,7 @@ const App: () => ReactNode = () => {
     }
   }, []);
 
-  const chooseScreen = async () => {
+  const isFirstRun = async () => {
     try {
       const value = await AsyncStorage.getItem('@tutorial_Key');
       if (value !== null) {
@@ -62,16 +64,18 @@ const App: () => ReactNode = () => {
 
   useEffect(() => {
     if (!connection) {
-      setupConnection();
+      setupConnection().then(() => {
+        isFirstRun();
+        setAppReady(true);
+      });
     }
-    chooseScreen();
   }, []);
 
   return (
     <>
       <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider {...eva} theme={{...eva.dark, ...theme}}>
-        {connection && (
+        <SplashScreen appReady={appReady}>
           <NavigationContainer>
             <Navigator>
               {displayTutorial && (
@@ -103,7 +107,7 @@ const App: () => ReactNode = () => {
               />
             </Navigator>
           </NavigationContainer>
-        )}
+        </SplashScreen>
       </ApplicationProvider>
     </>
   );
