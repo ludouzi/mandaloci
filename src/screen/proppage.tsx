@@ -2,20 +2,12 @@ import React from 'react';
 import {Layout, Divider, Text, RadioGroup, Radio} from '@ui-kitten/components';
 import {style} from '../style/style';
 import {ChoiceInput} from '../component/choiceinput';
+import {UnlockPage} from '../component/unlockpage';
 
 export const PropPage = (page: any, ctrl: any) => {
   return (
     <Layout style={style.pageContainer}>
-      <Layout style={style.titleView}>
-        <Text style={style.pageTitle}>{page.comp}</Text>
-      </Layout>
-      <Layout style={style.pageView}>
-        <Divider />
-      </Layout>
-      <Text>You've unlocked a new component!</Text>
-      <Layout style={style.pageView}>
-        <Divider />
-      </Layout>
+      <UnlockPage comp={page.comp} type={'component'} />
       <RadioGroup
         selectedIndex={ctrl.selectedRadio}
         onChange={index => ctrl.setRadio(index)}>

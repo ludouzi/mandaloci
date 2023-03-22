@@ -3,22 +3,12 @@ import {Layout, Divider, Text} from '@ui-kitten/components';
 import {style} from '../style/style';
 import {Character} from '../entity/character';
 import {Prop} from '../entity/prop';
+import {UnlockPage} from '../component/unlockpage';
 
 export const CharacterPage = (page: Character) => {
   return (
     <Layout style={style.pageContainer}>
-      <Layout style={style.titleView}>
-        <Text style={style.pageTitle}>{page.hanzi}</Text>
-      </Layout>
-      <Layout style={style.pageView}>
-        <Divider />
-      </Layout>
-      <Layout>
-        <Text>You've unlocked a new character!</Text>
-      </Layout>
-      <Layout style={style.pageView}>
-        <Divider />
-      </Layout>
+      <UnlockPage comp={page.hanzi} type={'character'} />
       <Text category="h2">{'\n'}Keyword</Text>
       <Layout>
         <Text style={style.textRow} category="p1">
