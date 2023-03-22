@@ -25,7 +25,7 @@ export const ActorPage = (page: any, ctrl: any) => {
         <Radio>Custom..</Radio>
       </RadioGroup>
       {ctrl.selectedRadio === page.examples.split(',').length && (
-        <ChoiceInput ctrl={ctrl} />
+        <ChoiceInput func={ctrl.handleInput} />
       )}
     </Layout>
   );

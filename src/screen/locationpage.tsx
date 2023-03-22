@@ -17,7 +17,7 @@ export const LocationPage = (page: Location, ctrl: any) => {
       <Layout style={style.pageView}>
         <Divider />
       </Layout>
-      <ChoiceInput ctrl={ctrl} />
+      <ChoiceInput func={ctrl.handleInput} />
     </Layout>
   );
 };
