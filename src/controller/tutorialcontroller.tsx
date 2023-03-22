@@ -28,15 +28,7 @@ export const TutorialController = () => {
   };
 
   useEffect(() => {
-    let isMounted = true;
-    // delay fetching data until db schema is initialised
-    // look into other methods later?
-    setTimeout(() => {
-      isMounted ? getData() : null;
-    }, 200);
-    return () => {
-      isMounted = false;
-    };
+    getData();
   }, []);
 
   return {
