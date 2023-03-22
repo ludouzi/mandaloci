@@ -9,9 +9,6 @@ export const LocationPage = (page: Location, ctrl: any) => {
   return (
     <Layout style={style.pageContainer}>
       <UnlockPage comp={page.final} type={'final'} />
-      <Layout style={style.pageView}>
-        <Divider />
-      </Layout>
       <ChoiceInput func={ctrl.handleInput} />
     </Layout>
   );
