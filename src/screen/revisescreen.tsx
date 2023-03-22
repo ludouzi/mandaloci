@@ -4,7 +4,15 @@ import {SafeAreaView, StyleSheet} from 'react-native';
 import {CardController} from '../controller/cardcontroller';
 import {Card} from '../types';
 
-export const ReviseScreen = (props: any) => {
+type ReviseProps = {
+  route: {
+    params: {
+      cards: Card[];
+    };
+  };
+};
+
+export const ReviseScreen = (props: ReviseProps) => {
   const ctrl = CardController();
 
   return (
